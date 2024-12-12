@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e2a3a; /* Deep blue/teal color for a professional look */
+    color: #f4f4f4; /* Light color text for contrast */
+  }
+  
+  
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(120deg, #2980b9, #105fa0); /* Professional gradient color */
+    color: white;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  /* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust min width to ensure items fit well */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Gallery Item */
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    cursor: pointer;
+    border: 3px solid transparent;
+    height: 300px; /* Fixed height for consistent box size */
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.05);
+    border: 2px solid #f7b731; /* Muted gold border */
+    box-shadow: 0 4px 15px rgba(247, 183, 49, 0.3); /* Soft gold shadow */
+  }
+  
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+  
+  .gallery-item:hover::after {
+    content: attr(data-location); /* Show the location on hover */
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+  }
+  
+  
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+  }
+  
+  .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out; /* Add smooth fade transition */
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #f7b731;
+  }
+  
+  
+  
+  
+  
+  
+  /* Hover effects */
+  .lightbox:hover {
+    cursor: pointer;
+  }
+  /* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #f7b731; /* Muted gold color for the scrollbar thumb */
+    border-radius: 10px; /* Rounded edges for a smooth look */
+    border: 2px solid #1e2a3a; /* Matching border color for the thumb */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #1e2a3a; /* Background of the scrollbar track */
+    border-radius: 10px; /* Matching rounded corners */
+  }
+  
+  /* Optional: Adding hover effect to the scrollbar */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #ffcc00; /* Lighter gold color on hover */
+  }
