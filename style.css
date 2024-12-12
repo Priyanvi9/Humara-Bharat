@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
   body {
     font-family: 'Arial', sans-serif;
     background-color: #1e2a3a; 
@@ -17,12 +16,10 @@
   header h1 {
     font-size: 2.5rem;
   }
-  
   header p {
     font-size: 1rem;
     margin-top: 10px;
   }
-  
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -71,9 +68,7 @@
     padding: 5px 10px;
     font-size: 1.1rem;
     border-radius: 5px;
-  }
-  
-  
+  } 
   .lightbox {
     display: none;
     position: fixed;
@@ -87,7 +82,6 @@
     z-index: 1000;
     overflow: hidden;
   }
-  
   .lightbox img {
     max-width: 90%;
     max-height: 80%;
@@ -107,7 +101,6 @@
     border: none;
     cursor: pointer;
   }
-  
   .close-btn:hover {
     color: #f7b731;
   }
